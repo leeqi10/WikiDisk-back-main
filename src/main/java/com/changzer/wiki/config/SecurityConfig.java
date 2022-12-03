@@ -70,9 +70,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //允许跨越
         http.cors();
 
-        //http.exceptionHandling()
-                //.accessDeniedHan dler(accessDeniedHandler)
-                //.authenticationEntryPoint(authenticationEntryPoint);
+        http.exceptionHandling()
+                .accessDeniedHandler(accessDeniedHandler)
+                .authenticationEntryPoint(authenticationEntryPoint);
     }
 
     @Bean
