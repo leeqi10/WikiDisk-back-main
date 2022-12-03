@@ -13,7 +13,6 @@ import java.util.Date;
 /**
  * 用户表(User)实体类
  *
- * @author 三更
  */
 @Data
 @AllArgsConstructor
@@ -30,11 +29,11 @@ public class User implements Serializable {
     /**
     * 用户名
     */
-    private String userName;
+    private String username;
     /**
     * 昵称
     */
-    private String nickName;
+    private String nickname;
     /**
     * 密码
     */
@@ -50,7 +49,7 @@ public class User implements Serializable {
     /**
     * 手机号
     */
-    private String phonenumber;
+    private String phone;
     /**
     * 用户性别（0男，1女，2未知）
     */
@@ -59,6 +58,18 @@ public class User implements Serializable {
     * 头像
     */
     private String avatar;
+    /**
+     * 专业
+     */
+    private String major;
+    /**
+     * 小组
+     */
+    private String group;
+    /**
+     * 年级
+     */
+    private String grade;
     /**
     * 用户类型（0管理员，1普通用户）
     */
@@ -83,4 +94,12 @@ public class User implements Serializable {
     * 删除标志（0代表未删除，1代表已删除）
     */
     private Integer delFlag;
+    /**
+    * 微信openId
+    */
+    private Integer wxOpenId;
+    /**
+    * qq openId
+    */
+    private Integer qqOpenId;
 }
