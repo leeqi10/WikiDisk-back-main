@@ -48,7 +48,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring(). antMatchers("/swagger-ui.html")
                 .antMatchers("/webjars/**")
                 .antMatchers("/v2/**")
-                .antMatchers("/swagger-resources/**");
+                .antMatchers("/swagger-resources/**")
+                .antMatchers("/user/login");
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -61,7 +62,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 //.antMatchers("/hello").permitAll()
                 // 对于登录接口 允许匿名访问
-                .antMatchers("/user/login").anonymous()
+                .antMatchers().anonymous()
                 // 除上面外的所有请求全部需要鉴权认证
                 .anyRequest().authenticated();
         http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
@@ -69,9 +70,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //允许跨越
         http.cors();
 
-        http.exceptionHandling()
-                .accessDeniedHandler(accessDeniedHandler)
-                .authenticationEntryPoint(authenticationEntryPoint);
+        //http.exceptionHandling()
+                //.accessDeniedHan dler(accessDeniedHandler)
+                //.authenticationEntryPoint(authenticationEntryPoint);
     }
 
     @Bean

@@ -65,7 +65,7 @@ public class User implements Serializable {
     /**
      * 小组
      */
-    private String group;
+    private String direction;
     /**
      * 年级
      */

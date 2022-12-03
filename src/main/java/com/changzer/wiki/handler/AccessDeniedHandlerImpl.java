@@ -7,6 +7,7 @@ package com.changzer.wiki.handler;/**
 import com.alibaba.fastjson.JSON;
 import com.changzer.wiki.utils.Result;
 import com.changzer.wiki.utils.WebUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
@@ -16,6 +17,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *@description TODO
@@ -25,11 +28,17 @@ import java.io.IOException;
  */
 
 @Component
+@Slf4j
 public class AccessDeniedHandlerImpl implements AccessDeniedHandler {
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
-        Result result = new Result(HttpStatus.FORBIDDEN.value(), "权限不足");
-        String json = JSON.toJSONString(result);
+        StringBuffer requestURL = request.getRequestURL();
+        log.info("requestURL {}",requestURL);
+        Map<String, Object> map = new HashMap<>();
+        map.put("code", HttpStatus.FORBIDDEN.value());
+        map.put("msg", HttpStatus.FORBIDDEN.getReasonPhrase());
+        String json = JSON.toJSONString(map);
+        log.info("json::{}",json);
         WebUtils.renderString(response,json);
     }
 }

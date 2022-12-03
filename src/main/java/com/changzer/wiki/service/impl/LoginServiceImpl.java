@@ -47,7 +47,7 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public Result login(User user) {
         //使用Authentication authenticate认证
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUserName(),user.getPassword());
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUsername(),user.getPassword());
         Authentication authenticate = authenticationManager.authenticate(authenticationToken);
 
         //登录失败，给出相应提示
@@ -85,7 +85,7 @@ public class LoginServiceImpl implements LoginService {
 
         //判断用户名是否已经存在了
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(User::getUserName, user.getUserName());
+        queryWrapper.eq(User::getUsername, user.getUsername());
         User hasUser = userManager.selectOne(queryWrapper);
         if (!Objects.isNull(hasUser)){
             return new Result(403,"注册失败，该用户已存在");

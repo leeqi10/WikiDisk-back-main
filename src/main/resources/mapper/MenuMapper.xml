@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wx.app.mapper.MenuMapper">
+<mapper namespace="com.changzer.wiki.mapper.MenuMapper">
     <!--使用insert update delete select标签来写sql-->
     <select id="selectPermsByUserId" resultType="java.lang.String">
         SELECT
