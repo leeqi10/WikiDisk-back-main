@@ -1,4 +1,4 @@
-package com.changzer.wiki.entity;/**
+package com.changzer.wiki.auth.entity;/**
  * @author lingqu
  * @date 2022/3/1
  * @apiNote

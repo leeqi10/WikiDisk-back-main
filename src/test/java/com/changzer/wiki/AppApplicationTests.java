@@ -1,10 +1,10 @@
 package com.changzer.wiki;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.changzer.wiki.entity.LoginUser;
-import com.changzer.wiki.entity.User;
-import com.changzer.wiki.mapper.MenuMapper;
-import com.changzer.wiki.mapper.UserMapper;
+import com.changzer.wiki.auth.entity.LoginUser;
+import com.changzer.wiki.auth.entity.User;
+import com.changzer.wiki.auth.mapper.MenuMapper;
+import com.changzer.wiki.auth.mapper.UserMapper;
 import com.changzer.wiki.utils.RedisCache;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

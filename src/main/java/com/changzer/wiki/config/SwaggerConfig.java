@@ -35,7 +35,7 @@ public class SwaggerConfig {
                 //none()不扫描
                 //withClassAnnotation() 扫描类上的注解
                 //withMethodAnnotation() 扫描方法上的注解
-                .apis(RequestHandlerSelectors.basePackage("com.changzer.wiki.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.changzer.wiki.auth.controller"))
                 //path（）过滤什么路径
                 //.paths(PathSelectors.any())
 

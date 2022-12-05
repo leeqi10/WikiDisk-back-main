@@ -1,14 +1,14 @@
-package com.changzer.wiki.service.impl;/**
+package com.changzer.wiki.auth.service.impl;/**
  * @author lingqu
  * @date 2022/3/1
  * @apiNote
  */
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.changzer.wiki.entity.LoginUser;
-import com.changzer.wiki.entity.User;
-import com.changzer.wiki.mapper.UserMapper;
-import com.changzer.wiki.service.LoginService;
+import com.changzer.wiki.auth.entity.LoginUser;
+import com.changzer.wiki.auth.entity.User;
+import com.changzer.wiki.auth.mapper.UserMapper;
+import com.changzer.wiki.auth.service.LoginService;
 import com.changzer.wiki.utils.JwtUtil;
 import com.changzer.wiki.utils.RedisCache;
 import com.changzer.wiki.utils.Result;

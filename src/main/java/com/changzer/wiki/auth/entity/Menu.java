@@ -1,4 +1,4 @@
-package com.changzer.wiki.entity;
+package com.changzer.wiki.auth.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;

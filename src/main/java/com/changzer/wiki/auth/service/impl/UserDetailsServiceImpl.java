@@ -1,14 +1,14 @@
-package com.changzer.wiki.service.impl;/**
+package com.changzer.wiki.auth.service.impl;/**
  * @author lingqu
  * @date 2022/3/1
  * @apiNote
  */
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.changzer.wiki.entity.LoginUser;
-import com.changzer.wiki.entity.User;
-import com.changzer.wiki.mapper.MenuMapper;
-import com.changzer.wiki.mapper.UserMapper;
+import com.changzer.wiki.auth.entity.LoginUser;
+import com.changzer.wiki.auth.entity.User;
+import com.changzer.wiki.auth.mapper.MenuMapper;
+import com.changzer.wiki.auth.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

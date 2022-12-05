@@ -1,10 +1,10 @@
-package com.changzer.wiki.service;/**
+package com.changzer.wiki.auth.service;/**
  * @author lingqu
  * @date 2022/3/1
  * @apiNote
  */
 
-import com.changzer.wiki.entity.User;
+import com.changzer.wiki.auth.entity.User;
 import com.changzer.wiki.utils.Result;
 
 /**

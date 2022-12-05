@@ -1,4 +1,4 @@
-package com.changzer.wiki.controller;/**
+package com.changzer.wiki.auth.controller;/**
  * @author lingqu
  * @date 2022/2/28
  * @apiNote
