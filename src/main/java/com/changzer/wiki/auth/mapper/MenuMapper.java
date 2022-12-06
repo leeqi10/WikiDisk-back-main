@@ -1,7 +1,7 @@
 package com.changzer.wiki.auth.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.changzer.wiki.auth.entity.Menu;
+import com.changzer.wiki.auth.entity.auth.Menu;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

@@ -4,7 +4,7 @@ package com.changzer.wiki.auth.controller;/**
  * @apiNote
  */
 
-import com.changzer.wiki.auth.entity.User;
+import com.changzer.wiki.auth.entity.auth.User;
 import com.changzer.wiki.auth.service.LoginService;
 import com.changzer.wiki.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;

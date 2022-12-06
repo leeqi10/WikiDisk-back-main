@@ -57,4 +57,9 @@ public class Result<T> {
         this.msg = msg;
         this.data = data;
     }
+
+    public static Result success(Integer code, String msg, Object data){
+        Result tResult = new Result(code,msg,data);
+        return tResult;
+    }
 }

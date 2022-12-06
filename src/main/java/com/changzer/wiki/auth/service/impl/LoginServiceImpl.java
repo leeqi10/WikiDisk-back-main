@@ -5,8 +5,8 @@ package com.changzer.wiki.auth.service.impl;/**
  */
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.changzer.wiki.auth.entity.LoginUser;
-import com.changzer.wiki.auth.entity.User;
+import com.changzer.wiki.auth.entity.auth.LoginUser;
+import com.changzer.wiki.auth.entity.auth.User;
 import com.changzer.wiki.auth.mapper.UserMapper;
 import com.changzer.wiki.auth.service.LoginService;
 import com.changzer.wiki.utils.JwtUtil;
@@ -40,7 +40,7 @@ public class LoginServiceImpl implements LoginService {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private UserMapper userManager;
+    private UserMapper userMapper;
     @Autowired
     private RedisCache redisCache;
 
@@ -86,7 +86,7 @@ public class LoginServiceImpl implements LoginService {
         //判断用户名是否已经存在了
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(User::getUsername, user.getUsername());
-        User hasUser = userManager.selectOne(queryWrapper);
+        User hasUser = userMapper.selectOne(queryWrapper);
         if (!Objects.isNull(hasUser)){
             return new Result(403,"注册失败，该用户已存在");
         }
@@ -96,12 +96,7 @@ public class LoginServiceImpl implements LoginService {
         String passwordEncoder = ps.encode(user.getPassword());
         user.setPassword(passwordEncoder);
 
-        //得到执行人的id(如果可以每个人注册则不需要这个，并且取消注册接口的拦截)
-        UsernamePasswordAuthenticationToken authentication = (UsernamePasswordAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
-        LoginUser principal = (LoginUser) authentication.getPrincipal();
-        Long id = principal.getUser().getId();
-        user.setCreateBy(id);
-        userManager.insert(user);
+        userMapper.insert(user);
         return new Result(200,"注册成功");
     }
 }

@@ -4,7 +4,7 @@ package com.changzer.wiki.filter;/**
  * @apiNote
  */
 
-import com.changzer.wiki.auth.entity.LoginUser;
+import com.changzer.wiki.auth.entity.auth.LoginUser;
 import com.changzer.wiki.utils.JwtUtil;
 import com.changzer.wiki.utils.RedisCache;
 import io.jsonwebtoken.Claims;

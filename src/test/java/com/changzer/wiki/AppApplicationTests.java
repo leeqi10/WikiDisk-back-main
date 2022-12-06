@@ -1,8 +1,8 @@
 package com.changzer.wiki;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.changzer.wiki.auth.entity.LoginUser;
-import com.changzer.wiki.auth.entity.User;
+import com.changzer.wiki.auth.entity.auth.LoginUser;
+import com.changzer.wiki.auth.entity.auth.User;
 import com.changzer.wiki.auth.mapper.MenuMapper;
 import com.changzer.wiki.auth.mapper.UserMapper;
 import com.changzer.wiki.utils.RedisCache;

@@ -4,7 +4,7 @@ package com.changzer.wiki.auth.service;/**
  * @apiNote
  */
 
-import com.changzer.wiki.auth.entity.User;
+import com.changzer.wiki.auth.entity.auth.User;
 import com.changzer.wiki.utils.Result;
 
 /**
