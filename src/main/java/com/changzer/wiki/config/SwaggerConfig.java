@@ -39,7 +39,6 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("com.changzer.wiki.auth.controller"))
                 //path（）过滤什么路径
                 .paths(PathSelectors.any())
-
                 .build();
 
     }
